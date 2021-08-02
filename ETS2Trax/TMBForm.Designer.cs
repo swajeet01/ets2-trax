@@ -24,6 +24,7 @@ namespace ETS2Trax {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TMBForm));
             this.gamesTabControler = new System.Windows.Forms.TabControl();
             this.ets2Page = new System.Windows.Forms.TabPage();
             this.ets2LibraryTab = new ETS2Trax.LibraryTab();
@@ -97,10 +98,11 @@ namespace ETS2Trax {
             this.ClientSize = new System.Drawing.Size(780, 557);
             this.Controls.Add(this.gamesTabControler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TMBForm";
-            this.Text = "TMB";
+            this.Text = "ETS2Trax";
             this.gamesTabControler.ResumeLayout(false);
             this.ets2Page.ResumeLayout(false);
             this.atsPage.ResumeLayout(false);

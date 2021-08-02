@@ -4,6 +4,11 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
+    <ApplicationIcon>cd.ico</ApplicationIcon>
+    <Version>0.0.1</Version>
+    <Authors>sg768</Authors>
+    <Company />
   </PropertyGroup>
 
 </Project>

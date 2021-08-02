@@ -24,6 +24,7 @@ namespace ETS2Trax {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CdSelector));
             this.gruopBox = new System.Windows.Forms.GroupBox();
             this.listBox = new System.Windows.Forms.ListBox();
             this.selectButton = new System.Windows.Forms.Button();
@@ -101,6 +102,7 @@ namespace ETS2Trax {
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.selectButton);
             this.Controls.Add(this.gruopBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CdSelector";

@@ -147,6 +147,7 @@ namespace ETS2Trax {
             setTrackButtons(false);
             selectButton.Enabled = false;
             HashSet<string> f = new HashSet<string>(Directory.GetFiles(DataDirPath + musicDirName));
+
             DeleteFilesAsync(new HashSet<string>(Directory.GetFiles(DataDirPath + musicDirName)))
                 .GetAwaiter().OnCompleted(() => {
                     progressBar.Visible = false;
