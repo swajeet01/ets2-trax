@@ -4,11 +4,16 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <StartupObject></StartupObject>
+    <StartupObject>ETS2Trax.Program</StartupObject>
     <ApplicationIcon>cd.ico</ApplicationIcon>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>sg768</Authors>
     <Company />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
 
 </Project>
