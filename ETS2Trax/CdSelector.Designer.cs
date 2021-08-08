@@ -86,10 +86,10 @@ namespace ETS2Trax {
             // 
             // textBox
             // 
-            this.textBox.Location = new System.Drawing.Point(13, 262);
+            this.textBox.Location = new System.Drawing.Point(20, 262);
             this.textBox.Name = "textBox";
             this.textBox.PlaceholderText = "CD Name";
-            this.textBox.Size = new System.Drawing.Size(335, 23);
+            this.textBox.Size = new System.Drawing.Size(323, 23);
             this.textBox.TabIndex = 4;
             // 
             // CdSelector
@@ -106,7 +106,7 @@ namespace ETS2Trax {
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CdSelector";
-            this.Text = "CdSelector";
+            this.Text = "Select or Create CD";
             this.gruopBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

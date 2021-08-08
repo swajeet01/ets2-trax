@@ -130,7 +130,7 @@ namespace ETS2Trax {
             this.detailsBox.Margin = new System.Windows.Forms.Padding(50, 50, 3, 3);
             this.detailsBox.Name = "detailsBox";
             this.detailsBox.Padding = new System.Windows.Forms.Padding(10);
-            this.detailsBox.Size = new System.Drawing.Size(226, 266);
+            this.detailsBox.Size = new System.Drawing.Size(226, 144);
             this.detailsBox.TabIndex = 4;
             this.detailsBox.TabStop = false;
             this.detailsBox.Text = "Selected CD";
@@ -239,7 +239,7 @@ namespace ETS2Trax {
             this.songsListGroup.Margin = new System.Windows.Forms.Padding(50, 50, 3, 3);
             this.songsListGroup.Name = "songsListGroup";
             this.songsListGroup.Padding = new System.Windows.Forms.Padding(10);
-            this.songsListGroup.Size = new System.Drawing.Size(252, 266);
+            this.songsListGroup.Size = new System.Drawing.Size(399, 430);
             this.songsListGroup.TabIndex = 5;
             this.songsListGroup.TabStop = false;
             this.songsListGroup.Text = "Tracks";
@@ -250,30 +250,30 @@ namespace ETS2Trax {
             this.trackListBox.ItemHeight = 15;
             this.trackListBox.Location = new System.Drawing.Point(13, 21);
             this.trackListBox.Name = "trackListBox";
-            this.trackListBox.Size = new System.Drawing.Size(226, 229);
+            this.trackListBox.Size = new System.Drawing.Size(373, 394);
             this.trackListBox.TabIndex = 1;
             // 
             // statusLabel
             // 
-            this.statusLabel.AutoSize = true;
+            this.statusLabel.AutoEllipsis = true;
             this.statusLabel.Location = new System.Drawing.Point(3, 269);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(127, 15);
+            this.statusLabel.Size = new System.Drawing.Size(370, 15);
             this.statusLabel.TabIndex = 6;
             this.statusLabel.Text = "Selected Directory N/A";
             // 
             // insertedCdLabel
             // 
-            this.insertedCdLabel.AutoSize = true;
+            this.insertedCdLabel.AutoEllipsis = true;
             this.insertedCdLabel.Location = new System.Drawing.Point(3, 284);
             this.insertedCdLabel.Name = "insertedCdLabel";
-            this.insertedCdLabel.Size = new System.Drawing.Size(93, 15);
+            this.insertedCdLabel.Size = new System.Drawing.Size(370, 17);
             this.insertedCdLabel.TabIndex = 7;
             this.insertedCdLabel.Text = "Inserted CD N/A";
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(0, 303);
+            this.progressBar.Location = new System.Drawing.Point(13, 392);
             this.progressBar.MarqueeAnimationSpeed = 10;
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(360, 23);
@@ -293,7 +293,7 @@ namespace ETS2Trax {
             this.Controls.Add(this.buttonGroup);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "LibraryTab";
-            this.Size = new System.Drawing.Size(636, 501);
+            this.Size = new System.Drawing.Size(780, 430);
             this.buttonGroup.ResumeLayout(false);
             this.buttonGroup.PerformLayout();
             this.detailsBox.ResumeLayout(false);
@@ -301,7 +301,6 @@ namespace ETS2Trax {
             this.tableLayoutPanel1.PerformLayout();
             this.songsListGroup.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

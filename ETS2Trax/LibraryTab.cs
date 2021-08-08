@@ -40,12 +40,12 @@ namespace ETS2Trax {
                 trackListBox.BeginUpdate();
                 trackListBox.Items.AddRange(tracks.ToArray());
                 trackListBox.EndUpdate();
-                setTrackButtons(true);
+                enableTrackButtons(true);
             }
         }
 
         private void unloadTracksSelectedCd() {
-            setTrackButtons(false);
+            enableTrackButtons(false);
             tracks.Clear();
             trackListBox.Items.Clear();
             SelectedCd = "";
@@ -69,7 +69,7 @@ namespace ETS2Trax {
                         string.IsNullOrEmpty(InsertedCd) ? "N/A" : InsertedCd);
         }
 
-        private void setTrackButtons(bool state) {
+        private void enableTrackButtons(bool state) {
             insertButton.Enabled =
             addSongButton.Enabled = state;
             removeSongButton.Enabled = state;
@@ -143,11 +143,14 @@ namespace ETS2Trax {
         }
 
         private void insertButton_Click(object sender, EventArgs e) {
+
             progressBar.Visible = true;
-            setTrackButtons(false);
+            enableTrackButtons(false);
             selectButton.Enabled = false;
+
             HashSet<string> f = new HashSet<string>(Directory.GetFiles(DataDirPath + musicDirName));
 
+            /*
             DeleteFilesAsync(new HashSet<string>(Directory.GetFiles(DataDirPath + musicDirName)))
                 .GetAwaiter().OnCompleted(() => {
                     progressBar.Visible = false;
@@ -165,19 +168,36 @@ namespace ETS2Trax {
                 selectButton.Enabled = true;
                 loadTracksSelectedCd();
                 UpdateSelectedCdDetails();
-            });
-            StreamWriter writer = File.CreateText(DataDirPath + musicDirName +
-                SelectedCd.Replace(separator, ".sgdat"));
-            writer.WriteLine("[CD NAME]: " + SelectedCd.Replace(separator, null));
-            writer.WriteLine("[TRACKS COUNT]: " + tracks.Count);
-            writer.Flush();
-            writer.Close();
-            MessageBox.Show(
-                   "Selected CD was inserted",
-                   "Success",
-                   MessageBoxButtons.OK, MessageBoxIcon.Information);
-            InsertedCd = queryCurrentCd().Replace(".sgdat", null);
-            UpdateInsertedCdDetails();
+            }); /**/
+
+            ReplaceFiles(
+                new HashSet<string>(Directory.GetFiles(DataDirPath + musicDirName)),
+                new HashSet<string>(Directory.GetFiles(DataDirPath + shelfDirName + SelectedCd)),
+                    DataDirPath + musicDirName)
+                    .GetAwaiter()
+                    .OnCompleted(() => {
+                        // Should this run async?
+                        StreamWriter writer = File.CreateText(DataDirPath + musicDirName +
+                        SelectedCd.Replace(separator, ".sgdat"));
+                        writer.WriteLine("[CD NAME]: " + SelectedCd.Replace(separator, null));
+                        writer.WriteLine("[TRACKS COUNT]: " + tracks.Count);
+                        writer.Flush();
+                        writer.Close();
+                        // nah
+                        progressBar.Visible = false;
+                        MessageBox.Show(
+                               "Selected CD was inserted",
+                               "Success",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                        InsertedCd = queryCurrentCd().Replace(".sgdat", null); // will check write above, how nice.
+                        loadTracksSelectedCd();
+                        UpdateInsertedCdDetails();
+                        UpdateSelectedCdDetails();
+                        enableTrackButtons(true);
+                        selectButton.Enabled = true;
+                    }
+            );
         }
 
         private void addSongButton_Click(object sender, EventArgs e) {
@@ -191,13 +211,13 @@ namespace ETS2Trax {
             DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK) {
                 progressBar.Visible = true;
-                setTrackButtons(false);
+                enableTrackButtons(false);
                 selectButton.Enabled = false;
                 HashSet<string> files = new HashSet<string>(openFileDialog.FileNames);
                 tracks.UnionWith(files);
                 CopyFilesAsync(files, DataDirPath + shelfDirName + SelectedCd).GetAwaiter().OnCompleted(() => {
                     progressBar.Visible = false;
-                    setTrackButtons(true);
+                    enableTrackButtons(true);
                     selectButton.Enabled = true;
                     loadTracksSelectedCd();
                     UpdateSelectedCdDetails();
@@ -234,6 +254,11 @@ namespace ETS2Trax {
                     File.Delete(filePath);
                 }
             });
+        }
+
+        private async Task ReplaceFiles(HashSet<string> oldFiles, HashSet<string> newFiles, string folder) {
+            await DeleteFilesAsync(oldFiles);
+            await CopyFilesAsync(newFiles, folder);
         }
     }
 }

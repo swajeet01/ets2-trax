@@ -12,6 +12,7 @@ namespace ETS2Trax {
 
             ets2LibraryTab.InitializeForGame(Game.ETS2);
             atsLibraryTab.InitializeForGame(Game.ATS);
+            
 
         }
     }
