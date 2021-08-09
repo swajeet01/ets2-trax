@@ -30,15 +30,19 @@ namespace ETS2Trax {
             this.ets2LibraryTab = new ETS2Trax.LibraryTab();
             this.atsPage = new System.Windows.Forms.TabPage();
             this.atsLibraryTab = new ETS2Trax.LibraryTab();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.gamesTabControler.SuspendLayout();
             this.ets2Page.SuspendLayout();
             this.atsPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gamesTabControler
             // 
             this.gamesTabControler.Controls.Add(this.ets2Page);
             this.gamesTabControler.Controls.Add(this.atsPage);
+            this.gamesTabControler.Controls.Add(this.tabPage1);
             this.gamesTabControler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamesTabControler.Location = new System.Drawing.Point(0, 0);
             this.gamesTabControler.Name = "gamesTabControler";
@@ -91,6 +95,26 @@ namespace ETS2Trax {
             this.atsLibraryTab.Size = new System.Drawing.Size(781, 433);
             this.atsLibraryTab.TabIndex = 1;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(787, 439);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Help";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(755, 360);
+            this.label1.TabIndex = 0;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
             // TMBForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -108,6 +132,8 @@ namespace ETS2Trax {
             this.gamesTabControler.ResumeLayout(false);
             this.ets2Page.ResumeLayout(false);
             this.atsPage.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -119,5 +145,7 @@ namespace ETS2Trax {
         private System.Windows.Forms.TabPage atsPage;
         private LibraryTab ets2LibraryTab;
         private LibraryTab atsLibraryTab;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label1;
     }
 }

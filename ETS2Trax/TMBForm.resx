@@ -57,6 +57,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>- What is this application
+This application helps you categorize the music tracks you like to listen to while driving your truck in Euro Truck Simulator 2
+and American Truck Simulator.
+
+- How does it work
+It stores tracks in virtual CDs (OldSchool? It is!) which then you can insert one at a time and all the tracks of that CD will be loaded in the game.
+You can create as many CDs as you want and name them according to you and categorize your tracks based on you own criterias,
+you can also add or remove tracks after creating one.
+
+- How to use
+1. Load data directory: On application launch you have to select you ETS2/ATS data directory which is usually
+C:\Users\&lt;Your Username&gt;\Documents\&lt;American Truck Simulator or Euro Truck Simualtor&gt;. Click Load and
+select you data directory.
+2. Select a CD: Now you need to select a CD to work upon, click Select CD and it will display all CDs previously
+created (If no CDs are found/created previously the list will be empty and you have to create one first). Click
+the CD you want to work on from the list and then click Select.
+3. To create a CD: Go to CD selection window if not there yet (Click Select CD). Enter the name of the new
+CD in CD Name box and click Create (The new CD will be selected).
+4. To delete a CD: Go to CD selection window if not there yet (Click Select CD). Enter the name of the new
+CD in CD Name box or select on from list and click Delete.
+5. Add a tracks to selected CD: Click Add Tracks and select one or more mp3 file you want to add to
+current CD.
+6. Remove tracks from current CD: Select track a from Tracks list then click Remove Tracks.
+7. Load tracks in game: Click Insert CD and the tracks from that CD will be loaded in game.</value>
+  </data>
   <assembly alias="System.Drawing.Common" name="System.Drawing.Common, Version=4.0.2.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
