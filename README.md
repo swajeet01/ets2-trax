@@ -1,4 +1,4 @@
-## Temporary README, will add a nice one later
+# :warning: DELETING THIS REPOSITORY SOON
 
 # ETS2Trax
 An application to categorize and manage music tracks for Euro Truck
